@@ -12,19 +12,20 @@ export class ProductComponent {
   constructor(private productService: ProductService) {}
   ngOnInit() {
     this.productService.getProducts().subscribe(
-      (data) => {
-        this.products = data;
+      (products) => {
+        this.products = products;
+        console.log(products);
       },
       (error) => {
-        console.log('Lỗi server:' + JSON.stringify(error));
+        console.log(error);
       }
     );
   }
   removeProduct(id: number) {
     // xoa API
-    // this.productService.deleteProductId(id).subscribe(() => {
-    //   // reRender
-    //   this.products = this.products.filter((item) => item.id !== id);
-    // });
+    this.productService.deleteProductId(id).subscribe(() => {
+      // reRender
+      this.products = this.products.filter((item) => item.id !== id);
+    });
   }
 }
