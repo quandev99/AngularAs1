@@ -13,8 +13,8 @@ export class ProductEditComponent {
   public nowTimeout: number = new Date().getTime();
 
   product: IProduct = {
-    name: '',
     id: 0,
+    name: '',
     image: '',
     price: 0,
     createdAt: 0,
@@ -37,11 +37,11 @@ export class ProductEditComponent {
       this.productService.getProductID(id).subscribe((product: any) => {
         this.product = product;
         this.productForm.patchValue({
+          id: product.id,
           name: product.name,
           price: product.price,
           image: product.image,
           createdAt: product.createdAt,
-          id: product.id,
         });
       });
     });
