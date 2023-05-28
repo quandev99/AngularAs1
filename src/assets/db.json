@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nguyễn Viết Quân",
+      "class": "WD 17302",
+      "imageUrl": "https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGV2ZWxvcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Đăng Hải",
+      "class": "WD 17302",
+      "imageUrl": "https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Văn Cường",
+      "class": "WD 17303",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661270437172-97ae8d858a80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+    },
+    {
+      "id": 4,
+      "name": "Trần Thanh Hoàn",
+      "class": "WD 17301",
+      "imageUrl": "https://images.unsplash.com/photo-1661956600654-edac218fea67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MjJ8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+    }
+  ]
+}
