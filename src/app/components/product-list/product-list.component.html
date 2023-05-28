@@ -1,0 +1,43 @@
+<div class="max-w-[1200px] mx-auto w-full">
+  <div class="my-8">
+    <button class="p-3 text-white bg-green-500">
+      <a routerLink="">+</a>
+    </button>
+  </div>
+  <table class="w-full">
+    <thead class="bg-green-200">
+      <th>#</th>
+      <th>Ảnh</th>
+      <th>Tên sản phẩm</th>
+      <th>Giá</th>
+      <th>Action</th>
+    </thead>
+    <tbody *ngIf="products && products.length > 0">
+      <tr
+        *ngFor="let product of products; index as i"
+        class="border-b border-gray-400"
+      >
+        <td>{{ i + 1 }}</td>
+        <td class="w-[80px] h-[80px]">
+          <img
+            class="w-full h-full object-cover"
+            src="{{ product.image }}"
+            alt="{{ product.image }}"
+          />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <Button class="px-6 py-2 text-white bg-gray-400 rounded-lg"
+            ><a [routerLink]="['/product', product.id, 'edit']">Sửa</a></Button
+          >
+          <Button
+            class="px-6 py-2 text-white bg-red-500 rounded-lg"
+            (click)="removeProduct(product.id)"
+            >Xoá</Button
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -4,10 +4,10 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss'],
 })
-export class ProductComponent {
+export class ProductListComponent {
   products: IProduct[] = [];
   constructor(private productService: ProductService) {}
   ngOnInit() {
@@ -22,10 +22,13 @@ export class ProductComponent {
     );
   }
   removeProduct(id: number) {
+    const confirm = window.confirm('Bạn có muốn xoá không sản phẩm này không?');
     // xoa API
-    this.productService.deleteProductId(id).subscribe(() => {
-      // reRender
-      this.products = this.products.filter((item) => item.id !== id);
-    });
+    if (confirm) {
+      this.productService.deleteProductId(id).subscribe(() => {
+        // reRender
+        this.products = this.products.filter((item) => item.id !== id);
+      });
+    }
   }
 }
