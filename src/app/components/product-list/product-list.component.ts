@@ -26,7 +26,6 @@ export class ProductListComponent {
     // xoa API
     if (confirm) {
       this.productService.deleteProductId(id).subscribe(() => {
-        // reRender
         this.products = this.products.filter((item) => item.id !== id);
       });
     }

@@ -1,7 +1,7 @@
 <div class="max-w-[1200px] mx-auto w-full">
   <div class="my-8">
     <button class="p-3 text-white bg-green-500">
-      <a routerLink="">+</a>
+      <a routerLink="/productAdd">+</a>
     </button>
   </div>
   <table class="w-full">
@@ -10,6 +10,7 @@
       <th>Ảnh</th>
       <th>Tên sản phẩm</th>
       <th>Giá</th>
+      <th>Thời Gian</th>
       <th>Action</th>
     </thead>
     <tbody *ngIf="products && products.length > 0">
@@ -25,10 +26,11 @@
             alt="{{ product.image }}"
           />
         </td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>
-          <Button class="px-6 py-2 text-white bg-gray-400 rounded-lg"
+        <td class="text-center">{{ product.name }}</td>
+        <td class="text-center">{{ product.price }}</td>
+        <td class="text-center">{{ product.createdAt }}</td>
+        <td class="text-center">
+          <Button class="px-6 py-2 text-white bg-green-500 rounded-lg mr-2"
             ><a [routerLink]="['/product', product.id, 'edit']">Sửa</a></Button
           >
           <Button

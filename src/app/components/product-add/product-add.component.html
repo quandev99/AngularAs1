@@ -1,0 +1,46 @@
+<form
+  (ngSubmit)="onHandleSubmit()"
+  [formGroup]="productForm"
+  class="bg-slate-300 p-6"
+>
+  <div class="form-group mb-6 flex col-span-1">
+    <label for="" class="mr-3 block font-medium leading-6 text-gray-900"
+      >Id</label
+    >
+    <input
+      class="p-2 rounded-md border-0"
+      type="number"
+      name="id"
+      formControlName="id"
+    />
+  </div>
+  <div class="form-group mb-6">
+    <label for="" class="mr-3">Nam</label>
+    <input
+      class="p-2 rounded-md border-0"
+      type="text"
+      name="name"
+      formControlName="name"
+    />
+  </div>
+  <div class="form-group mb-6">
+    <label for="" class="mr-3">Price</label>
+    <input
+      class="p-2 rounded-md border-0"
+      type="number"
+      name="price"
+      formControlName="price"
+    />
+  </div>
+  <div class="form-group mb-6">
+    <label for="" class="mr-3">Image</label>
+    <input
+      class="p-2 rounded-md border-0"
+      type="text"
+      name="image"
+      formControlName="image"
+    />
+  </div>
+  <h2>{{ productForm.value | json }}</h2>
+  <button type="submit" class="p-2 bg-blue-600 text-white">Add Product</button>
+</form>
