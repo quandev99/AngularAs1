@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-edit',
   templateUrl: './product-edit.component.html',
@@ -29,7 +29,8 @@ export class ProductEditComponent {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     // Observable
     this.route.paramMap.subscribe((param) => {
@@ -58,6 +59,7 @@ export class ProductEditComponent {
     console.log('X', this.productForm);
     this.productService.updateProduct(product).subscribe((data) => {
       console.log(data);
+      this.router.navigateByUrl('/productList');
     });
   }
 }
